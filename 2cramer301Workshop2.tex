@@ -1,0 +1,336 @@
+\documentclass{article}
+\usepackage{amsthm, amssymb, amsmath}
+
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{prop}{Proposition}
+\newtheorem{lemma}{Lemma}
+\newtheorem{definition}{Definition}
+\newtheorem{conjecture}{Conjecture}
+
+
+\title{Fundamentals of Mathematics Portfolio}
+\author{Caleb Cramer}
+
+\begin{document}
+
+\maketitle
+
+\section{Workshop 1}
+
+\begin{prop}
+For all sets, A, B, and C, $A \cup (B \cap C) = (A \cup B) \cap (A \cup C)$
+\end{prop}
+
+
+\begin{proof}
+For $A$ $\cup$ ($B$ $\cap$ $C$) $\subseteq$ ($A$ $\cup$ $B$) $\cap$ ($A$ $\cup$ $C$)\\
+Choose $x \in A \cup (B \cap C)$.
+Then $x$ $\in$ $A$ or $x$ $\in$ $B$ $\cap$ $C$\\ 
+If $x$ $\in$ $A$ then $x$ $\in$ ($A$ $\cup$ $B$) $\cap$ ($A$ $\cup$ $C$) by definition\\ 
+If $x$ $\in$ $B$ $\cap$ $C$ then $x$ $\in$ $B$ and $x$ $\in$ $C$.\\
+So $x$ will be in ($A$ $\cup$ $B$) and in ($A$ $\cup$ $C$) as well as their intersection.\\
+\vspace{5mm}
+$\therefore$ $A$ $\cup$ ($B$ $\cap$ $C$) $\subseteq$ ($A$ $\cup$ $B$) $\cap$ ($A$ $\cup$ $C$)\\
+\noindent
+For ($A$ $\cup$ $B$) $\cap$ $(A \cup C)$ $\subseteq$ $A$ $\cup$ ($B$ $\cap$ $C$)\\
+Choose $x$ $\in$ ($A$ $\cup$ $B$) $\cap$ ($A$ $\cup$ $C$).
+Then $x \in A$ or $x \notin A$.\\
+If $x \in A$, then $x$ is obviously in $A \cup (B \cap C)$.\\
+If $x \notin A$, then it must be in $B$ and $C$ by the definition of intersecting unions.\\
+$\therefore$ $x$ must be in $B \cap C$ and is also in $A \cup (B \cap C$)\\
+\noindent
+$\therefore$ For all sets, $A$, $B$, and $C$, $A \cup (B \cap C) = (A \cup B) \cap (A \cup C).$
+\end{proof}
+
+\begin{subsection}{Reflection}
+In this first proof, I tried to edit it too much. I always like using different lines but Dr. Kearney says we need to trust LaTeX's editing more. So I tried to do that better in my second workshop by just using one paragraph. Admittedly, there are less equations in workshop 2 then there were in the first. I also had a lot of lines where I would assume too much and not explain enough. I tried to be as clear and concise as possible this time. I also did not use periods but that was pretty easy to fix.
+\end{subsection}
+
+\section{Workshop 2}
+
+
+\begin{definition}
+A number, $a$,is defined to be even, if there exists an integer, $k$ such that $a=2k$.
+\end{definition}
+
+\begin{definition}
+A number, $b$,is defined to be odd, if there exists an integer, $l$ such that $b=2l+1$.
+\end{definition}
+
+\begin{prop}
+Suppose $x,y \in \mathbb{Z}$. If $x$ is even then $xy$ is also even. 
+\end{prop}
+
+\begin{proof}
+Suppose $x=2k$ for some $k\in \mathbb{Z}$. There are 2 cases, either $y$ is odd or $y$ is even.
+
+\vspace{5mm}
+
+Suppose $y$ is odd and by definition, is equal to $2l+1$ for $l\in\mathbb{Z}$. Then $xy=(2k)(2l+1)$. When distributed, this is equal to $4kl+2k$. And when factored, $xy=2(2kl+k)$. Since $2kl+k\in\mathbb{Z}$, $xy$ is even for the case $x$ is even and $y$ is odd. Suppose $y$ is even and by definition, is equal to $2j$ for $j\in\mathbb{Z}$. Then $xy=(2k)(2j)$. When distributed, this is equal to $4jk$. And when factored, $xy=2(2jk)$. Since $2jk\in\mathbb{Z}$, $xy$ is even for the case $x$ is even and $y$ is odd.
+
+\vspace{5mm}
+
+$\therefore$ For all cases of $y$ where $x$ is even, $xy$ is even.
+\end{proof}
+
+\begin{subsection}{Reflection}
+I thought this proof was much cleaner and concise than my first. It had a good balance of words and equations but I did make a few aesthetic errors as well as placement issues. From now on my proposition needs to be directly above my proof and I had to learn how to make a 'newtheorem' and call it a definition. I also tried to split it up after receiving some comments in the class workshop but now it will always be paragraphs for me. 
+\end{subsection}
+
+
+\section{Workshop 3}
+
+\begin{prop}
+Suppose $a,b \in \mathbb{Z}$. If both $ab$ and $a+b$ are even then both $a$ and $b$ are also even. 
+\end{prop}
+
+\begin{proof}
+Proving towards the contrapositive, assume if $a$ or $b$ are odd, then either $ab$ is odd or $a+b$ is odd. So we must prove for the possibilities that either $a$ and $b$ are odd or $a$ is odd. The second option applies to $b$ as well, WLOG. Since the conclusion is an 'or' statement, we must only prove one of the two consequences. For $a$ and $b$ both being odd, by Definition 2, $a=2k+1$ and $b=2l+1$ for $k,l \in \mathbb{Z}$. Then $$ab=(2k+1)(2l+1)$$ $$4kl+2k+2l+1=2(2kl+k+l)+1$$Since $2kl+l+k\in\mathbb{Z}$, $ab$ is odd.
+
+\vspace{5mm}
+
+Now assume that b is even and a is odd. Then by Definition 1, $b=2l$ for $l \in \mathbb{Z}$ and by Definition 2, $a=2k+1$ for $k \in \mathbb{Z}$. Then $$a+b=(2k+1)+(2l)$$ $$2k+2l+1=2(k+l)+1$$Since $k+l\in\mathbb{Z}$, $a+b$ is also odd.
+
+\vspace{5mm}
+
+We have proved that if either $a$ or $b$ are odd, then either their sum or product is also odd. Therefore, by contrapositive, if both $ab$ and $a+b$ are even then both $a$ and $b$ are also even. 
+\end{proof}
+
+\begin{subsection}{Reflection}
+I felt much less confident about the logic of this proof and I think that it showed. I knew that it made sense to me but I wasn't sure if I conveyed that well enough. So my biggest issue in this one was clarity and brevity. I also made a good deal of silly mistakes and that is likely due to the fact that I had to rewrite my entire proof after the workshop.
+\end{subsection}
+
+
+
+\section{Workshop 4}
+\begin{definition}
+A real number is rational if it can be written as $\frac{a}{b}$ where $a,b \in \mathbb{Z}$. If a real number is not rational it is irrational.
+\end{definition}
+
+\vspace{5mm}
+
+This is a complex string of proofs, some of which are dependent on each other and some which are independent. We shall start with the independent ones such as $\sqrt{2}$ is irrational. This is crucial because it gives us an irrational 'building block' to use in later proofs.
+
+\vspace{5mm}
+
+\begin{prop}\label{sqrt2}
+$\sqrt{2}$ is irrational
+\end{prop}
+\begin{proof}
+Suppose $\sqrt{2}$ is rational. Then $\sqrt{2}=\frac{a}{b}$ for some $a,b\in\mathbb{Z}$ such that $a$ and $b$ have no common factors. Then $a=\sqrt{2}b$, and $a^2=2b^2$. Therefore $a^2$ is even and so $a$ is also even. Since $a$ is even, there exists some integer, $c$ such that $a=2c$. Then $a^2=4c^2=2b^2$. So $b^2=2c^2$ which makes $b^2$ even and therefore $b$ is even. This is a contradiction because $a$ and $b$ should have no common factors but they do, namely 2. Therefore $\sqrt{2}$ is irrational. This proof can be found in \cite{hammack}
+\end{proof}
+
+\vspace{5mm}
+
+The proofs for the sum and product of an irrational and a rational numbers will be used in Theorems \ref{betweenirrationalandrational} and \ref{betweentworationals}.
+
+\vspace{5mm}
+
+\begin{prop} \label{rationalsum}
+If $q$ is rational and $x$ is irrational, then $x+q$ is irrational.
+\end{prop}
+\begin{proof}
+Let's assume the inverse, $q$ is rational and $x$ is irrational and $x+q$ is rational. Since $q$ is rational there exist $a,b\in\mathbb{Z}$ such that $q=\frac{a}{b}$. Since $x+q$ is also rational there exist $n,m\in\mathbb{Z}$ such that $x+q=\frac{n}{m}$.
+$$x+\frac{a}{b}=\frac{n}{m}$$
+$$x=\frac{n}{m}-\frac{a}{b}$$
+$$x=\frac{nb}{mb}-\frac{ma}{mb}=\frac{bn-am}{bm}$$
+Since $a,b,n,m\in\mathbb{Z}$, $x$ is rational. This is a contradiction because we assumed earlier that $x$ was irrational.
+Therefore, if $q$ is rational and $x$ is irrational, then $x+q$ is irrational.
+\end{proof}
+
+\begin{prop} \label{rationalproduct}
+If $q$ is rational and $x$ is irrational, then $xq$ is irrational.
+\end{prop}
+\begin{proof}
+Let's assume the inverse, $q$ is rational and $x$ is irrational and $xq$ is rational. Since $q$ is rational, there exist $a,b\in\mathbb{Z}$ such that $q=\frac{a}{b}$. $xq$ is also rational so there exist $n,m\in\mathbb{Z}$ such that $xq=\frac{n}{m}$.
+$$x\frac{a}{b}=\frac{n}{m}$$
+$$x=\frac{nb}{ma}$$
+Since $a,b,n,m\in\mathbb{Z}$, $x$ is rational. This is a contradiction because we assumed earlier that $x$ was irrational.
+Therefore, if $q$ is rational and $x$ is irrational, then $xq$ is irrational.
+\end{proof}
+
+\begin{prop}
+Let $a,b,c\in\mathbb{Z}$ and $b\neq0$. If $a<c$ then $\frac{a+1}{b}\leq\frac{c}{b}$.
+\end{prop}
+\begin{proof}
+Assume $a<c$. Since $a$ and $c$ are both integers, the following is also true: $a<a+1\leq c$ Then $\frac{a}{b}<\frac{a+1}{b}\leq\frac{c}{b}$. Therefore if $a<c$ then $\frac{a+1}{b}\leq\frac{c}{b}$.
+\end{proof}
+
+\vspace{5mm}
+
+These are the meat of the Workshop. These effectivly combine to show that there is always an irrational number between a rational number and any number.
+
+\vspace{5mm}
+
+\begin{theorem}\label{betweenirrationalandrational}
+Between every rational and irrational number is an irrational number.
+\end{theorem} 
+\begin{proof}
+Let $a$ be rational and $b$ be irrational with $a<b$. Then by Proposition \ref{rationalsum}, $a+b$ is irrational. By Proposition \ref{rationalproduct}, $\frac{a+b}{2}$ is also irrational. The statement $a<\frac{a+b}{2}<b$ is true because , $\frac{a+b}{2}$ is the median of $a$ and $b$ and by definition is between the two. Therefore exists an irrational number between a rational number and an irrational number. WLOG, this proof also works for $a$ being irrational and $b$ being rational.
+\end{proof}
+
+\begin{theorem} \label{betweentworationals}
+Between every two rational numbers is an irrational number.
+\end{theorem}
+\begin{proof}
+Let $a$ and $b$ be rational numbers and $a=\frac{n}{m}$ and $b=\frac{r}{s}$ for $n,m,r,s\in\mathbb{Z}$. Also let $a<b$. We need an irrational number less than one and we know that by Proposition $\ref{sqrt2}$, $\sqrt{2}$ is irrational. Then $\frac{1}{\sqrt{2}}$ is also irrational by Proposition \ref{rationalproduct} as well as $n+\frac{1}{\sqrt{2}}$ by Proposition \ref{rationalsum}. By Proposition 7, we know that the next rational number would be $\frac{n+1}{m}$ and therefore $\frac{n+\frac{1}{\sqrt{2}}}{m}<\frac{n+1}{m}\leq\frac{r}{s}$. Since $\frac{n}{m}<\frac{n+\frac{1}{\sqrt{2}}}{m}<\frac{r}{s}$ we know that between every two rational numbers is an irrational number.
+\end{proof}
+
+\begin{subsection}{Reflection}
+My biggest issue in this workshop was silly errors in grammar. I learned that I should never start a sentence with a variable and also how to use an in-text citation in LaTex.
+\end{subsection}
+
+\section{Workshop 5}
+\begin{prop}
+For any $a\in\mathbb{Z}$, where $a$ is not a multiple of 5, there are infinitely many integers, $n$, such that $a\mid5n+1$.
+\end{prop}
+
+\begin{proof}
+This proof is by cases. Every number that is not a multiple of five can be written as $5k+1$ or $5k+2$ or $5k+3$ or $5k+4$. So we will prove for $a=5k+1,5k+2,5k+3,5k+4$, that $a\mid5n+1$. 
+
+\vspace{5mm}
+
+For $a=5k+1$ and $k\in\mathbb{Z}$:
+$$(5k+1)c=5n+1$$
+$$5kc+c-1=5n$$
+$$kc+\frac{c-1}{5}=n$$
+So to get $n$ to be an integer we need $\frac{c-1}{5}$ to be an integer. This requirement is satisfied by any $n$ such that, $n=5kc+k+c$. Since this set of integers has a cardinality that is equal to $\infty$, we know there are infinite possibilities for $n$ for a single value of $a$. Therefore if $a=5k+1$, $a\mid5n+1$.
+
+\vspace{5mm}
+
+For $a=5k+2$ and $k\in\mathbb{Z}$: 
+$$(5k+2)c=5n+1$$
+$$5kc+2c-1=5n$$
+$$kc+\frac{2c-1}{5}=n$$
+So to get $n$ to be an integer we need $\frac{2c-1}{5}$ to be an integer. Then $n=5kc+3k+2c+1$ for any $c$ that is odd.  Since the odd integers has a cardinality that is infinite, we know there are infinite possibilities for $n$ for a single value of $a$. Therefore if $a=5k+2$, $a\mid5n+1$.
+
+
+\vspace{5mm}
+
+For $a=5k+3$ and $k\in\mathbb{Z}$: 
+$$(5k+3)c=5n+1$$
+$$5kc+3c-1=5n$$
+$$kc+\frac{3c-1}{5}=n$$
+So to get $n$ to be an integer we need $\frac{3c-1}{5}$ to be an integer.
+Then $n=5kc+2k+3c+1$ for any $c\in\{m\in\mathbb{Z}:c=1+3m\}$.  Since this set of integers has a cardinality that is infinite, we know there are infinite possibilities for $n$ for a single value of $a$. Therefore if $a=5k+3$, $a\mid5n+1$.
+
+\vspace{5mm}
+
+For $a=5k+4$ and $k\in\mathbb{Z}$: 
+$$(5k+4)c=5n+1$$
+$$5kc+4c-1=5n$$
+$$kc+\frac{4c-1}{5}=n$$
+So to get $n$ to be an integer we need $\frac{4c-1}{5}$ to be an integer. Then $n=5kc+4k+4c+3$ for any $c\in\{m\in\mathbb{Z}:c=3+4m\}$.  Since this set of integers has a cardinality that is equal to $\infty$, we know there are infinite possibilities for $n$ for a single value of $a$. Therefore if $a=5k+4$, $a\mid5n+1$.
+
+\vspace{5mm}
+
+To backtrack for all the cases, we can prove that there are infinite options for $d$ which means there are infinite options for $n$, regardless of what $k$ is. This makes sense because $n$ and $d$ will scale up and down with each other and not require a change in $k$'s value. Therefore for any $a\in\mathbb{Z}$, where $a$ is not a multiple of 5, there are infinitely many integers, $n$, such that $a\mid5n+1$.
+\end{proof}
+
+\section{Workshop 6}
+This workshop is looking for a pattern between what requirements there are between a divisor and a multiple. We start off with a pretty simple proof.
+
+\begin{conjecture}
+If $ab$ if even, then $a$ is even or $b$ is even.
+\end{conjecture}
+\begin{proof}
+Proving towards contrapositive, assume that $a$ and $b$ are odd. Then there exist $l,m\in\mathbb{Z}$ such that $a=2l+1$ and $b=2k+1$. Then $ab=(2l+1)(2k+1)=4kl+2l+2k+1=2(2kl+l+k)+1$. And since $2kl+l+k\in\mathbb{Z}$, $ab$ is odd. By contrapositive, if $ab$ if even, then $a$ is even or $b$ is even.
+\end{proof}
+
+The previous proposition could be written similarly to the next three, if $2\mid ab$, then $2\mid a$ or $2\mid b$. In an attempt to gather information on a possible pattern, we try the next integer, three.
+
+\begin{conjecture}
+If $3\mid ab$, then $3\mid a$ or $3\mid b$.
+\end{conjecture}
+\begin{proof}
+Proving toward contrapositive, assume that $3\nmid a$ and $3\nmid b$. Then $a\neq 3c$ and $b \neq 3d$ for $c,d\in\mathbb{Z}$. 
+$$ab\neq 3d(3c)$$
+$$ab\neq 3(3cd)$$
+Therefore $3\nmid ab$ and by contrapositive, if $3\mid ab$, then $3\mid a$ or $3\mid b$.
+\end{proof}
+
+So two and three were both successful but they have so much in common, it would be near impossible to guess what the requirement is. So we try four next.
+
+\begin{conjecture}\label{compositediv}
+If $4\mid ab$, then $4\mid a$ or $4\mid b$.
+\end{conjecture}
+\begin{proof}[Counterexample]
+Let $a=b=2$. Then if $4\mid 2(2)$ then $4\mid2$. 
+$$4\mid 2(2)$$
+$$4c=4$$ for $c\in\mathbb{Z}$ namely $c=1$.
+Therefore $4\mid ab$.
+
+Therefore $4\mid2$ should also be true. 
+$$4\mid 2$$
+$$4c=2$$ for $c\in\mathbb{Z}$ but $c=1/2$ and that is not in $\mathbb{Z}$.
+
+Therefore the statement, if $4\mid ab$, then $4\mid a$ or $4\mid b$, is false. 
+\end{proof}
+
+We gain a ton of insight from this conjecture and its proof. Can we prove the general statement? No because we can just use the exact example from above as a counterexample.
+
+\begin{conjecture} \label{general}
+If $a\mid bc$, then $a\mid b$ or $a\mid c$.
+\end{conjecture}
+\begin{proof}[Counterexample]
+Let $a=4$. See Conjecture \ref{compositediv}.
+Therefore the statement, if $a\mid bc$, then $a\mid b$ or $a\mid c$ is false.
+\end{proof}
+
+So what have we learned? Well the Conjecture \ref{general} is false for any $a$ which is composite. So the negation of that statement must be true. This would mean for any prime number, $a$, if $a\mid bc$, then $a\mid b$ or $a\mid c$, is true. This is an extremely important fact in computer security and cryptography. Both these fields work with prime numbers and I am sure they use Euclid's Lemma.
+
+
+\section{Workshop 7}
+
+\begin{definition} [DeMorgan's Law of Unions]
+For any two finite sets, A and B, $\overline{A\cup B}=\overline{A}\cap \overline{B}$.
+\end{definition}
+
+\begin{prop}
+Assume $A_{1},A_{2},A_{3},...,A_{n}$ are sets in some universal set $U$ and $n\geq 2$. Prove that $\overline{A_{1}\cup A_{2}\cup A_{3}\cup ...\cup A_{n}}=\overline{A_{1}}\cap \overline{A_{2}}\cap ... \cap \overline{A_{n}}$.
+\end{prop}
+
+
+\begin{proof}
+We start by showing the base case: $\overline{A_{1}\cup A_{2}}=\overline{A_{1}}\cap \overline{A_{2}}$.\\
+We can see this is true due to DeMorgan's Law of Unions. Therefore $P(1)$ is true.
+
+\vspace{5mm}
+
+Assume that $P(k)=\overline{A_{1}\cup A_{2}\cup A_{3}\cup ...\cup A_{k}}=\overline{A_{1}}\cap \overline{A_{2}}\cap ...\cap \overline{A_{k}}$ is true for $k\geq 2$. Then $$P(k+1)=\overline{A_{1}\cup A_{2}\cup A_{3}\cup ...\cup A_{k}\cup A_{k+1}}$$
+$$=\overline{(A_{1}\cup A_{2}\cup A_{3}\cup ...\cup A_{k})\cup A_{k+1}}$$
+Similar to the base case, if we split the complement of two sets' union we get the intersection of their individual complements. To expand on that, let $\overline{A_{1}\cup A_{2}\cup A_{3}\cup ...\cup A_{k}}=\overline{A_{1}}\cap \overline{A_{2}}\cap ...\cap \overline{A_{k}}$ be the first set and let $A_{k+1}$ be the second. Then apply DeMorgan's Law of Unions.
+$$=\overline{(A_{1}\cup A_{2}\cup A_{3}\cup ...\cup A_{k})\cup A_{k+1}}$$ 
+$$=(\overline{A_{1}}\cap \overline{A_{2}}\cap ...\cap \overline{A_{k}})\cap \overline{A_{k+1}}$$
+
+Therefore $P(k+1)$ is true.
+Therefore $P(n)$ is true for all $n\geq 2$
+\end{proof}
+
+\begin{subsection}{Reflection}
+I actually like this proof. I made a bunch of spelling and grammatical errors that I should have caught. I also jumped a huge step and did not do a good job of showing how I did that. So for next time I want to proofread better.
+\end{subsection}
+
+\section{Workshop 8}
+
+\begin{prop}
+If $E$ and $F$ are connected subsets of $M$ with $E \cap F \neq 0$, prove that $E\cup F$ is connected.
+\end{prop}
+
+\begin{proof}
+Suppose towards contradiction that $E$ and $F$ are connected and $E \cap F \neq \emptyset$ and $E\cup F$ is disconnected. Then $E\cup F = A \cup B$ where $A,B$ are disjoint, nonempty open sets in $E\cup F$. Since $E\cap F \neq \emptyset$ we know that there is an element in both $E$ and $F$. Let this element be $x\in E \cup F$. Then $x \in E$ or $x \in F$. Choose the set where there is at least one other element in $E$ or $F$. We know that one of them must have another item because $A,B$ are nonempty. WLOG, let $x \in E$. Then let $C \subseteq A$ and $D \subseteq B$ so that $(C \cap A)\cup (D\cap B)= E$. Then we know that $(C \cap A)\cap (D\cap B)= (C)\cap (D)= \emptyset$ because $A\cap B = \emptyset$ and $C,D$ are subsets of two disjoint sets. $C$ and $D$ are also open because they are subsets of open sets so all their points must be interior. They are also non-empty because they are subsets of non-empty sets. Since $C\cap A$ and $D\cap B$ are disconnected and we already saw that $(C \cap A)\cup (D\cap B)= E$. Therefore by the definition of disconnected, we know that E is disconnected. This is a contradiction with our assumption earlier. Therefore if $E$ and $F$ are connected subsets of $M$ with $E \cap F \neq 0$, prove that $E\cup F$ is connected.
+\end{proof}
+
+
+\begin{thebibliography}{9}
+
+\bibitem{hammack}
+Hammack, Richard,
+  \textit{Book of Proof,}
+Creative Commons, Richmond, Virginia,
+  2003.
+
+\end{thebibliography}
+
+\end{document}
